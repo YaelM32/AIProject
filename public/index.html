@@ -1,0 +1,166 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fedbff;
+            /* light blue */
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #007627;
+            /* darker blue */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #000000;
+            /* position: relative;
+            margin-right: 1100px; */
+        }
+
+        select,
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            margin: 5px;
+            border: 1px solid #9cffb8;
+            /* light blue border */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #ff87c5;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #3c00ff;
+            /* light green border on focus */
+        }
+
+        select option:checked {
+            background-color: #cc66b3;
+            /* light green background for selected option */
+            color: #5d0a5f;
+            /* white text for selected option */
+        }
+
+        #ageInput {
+            display: none;
+        }
+
+        #choiceContainer {
+            height: '200px';
+        }
+
+        #buttonContainer {
+            margin-top: 20px;
+        }
+
+        #rel {
+            background-color: #e6f7ff;
+            border: none;
+        }
+
+        #responseContainer {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        #submitButton {
+            padding: 30px;
+            font-size: 90px;
+            text-align: right;
+            background-color: #cc6666;
+            /* light green */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            /* width: 100px; */
+            padding-left: 400px;
+            padding-top: 10px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #s1 {
+            position: relative;
+            left: 30%;
+            top: 50px;
+        }
+
+        #s2 {
+            position: relative;
+            left: 10%;
+            top: -42px;
+
+        }
+
+        #s3 {
+            position: relative;
+            left: -10%;
+            top: -137px;
+
+        }
+    </style>
+</head>
+
+<body id="body">
+    <h1>Please choose yours latter </h1>
+    <div id="choiceContainer">
+        <button id="rel" onclick="rel()" style="display: none;"></button>
+        <span id="s1">
+            <label for="category">congratulations type:</label>
+            <select id="category">
+                <option value="wish">wish</option>
+                <option value="song">song</option>
+                <option value="recitation">recitation</option>
+            </select>
+        </span>
+        <span id="s2">
+            <label for="type">emotional type:</label>
+            <select id="type">
+                <option value="happy">happy</option>
+                <option value="funny">funny</option>
+                <option value="excitement">excitement</option>
+            </select>
+        </span>
+        <span id="s3">
+            <label for="event">event:</label>
+            <select id="event" onchange="handleEventChange()">
+                <option value="wedding">wedding</option>
+                <option value="birthday">birthday </option>
+            </select>
+        </span>
+        <div id="ageInput" style="display: none;">
+            <label for="age">age</label>
+            <input type="number" id="age" />
+        </div>
+    </div>
+
+
+    <div id="buttonContainer">
+        <button id="submitButton" onclick="submitChoices()"> write me a latter!!</button>
+    </div>
+
+    <div id="responseContainer" style="display: none;"></div>
+
+
+    <script src="client.js"></script>
+</body>
+
+</html>
