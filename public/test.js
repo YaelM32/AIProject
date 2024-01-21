@@ -18,7 +18,6 @@ describe('Server Tests',async function() {
         age: '20'
       });
       
-
     expect(response).to.have.status(200);
   });
 
